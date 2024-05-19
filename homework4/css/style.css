@@ -1,0 +1,38 @@
+body {
+    font-size: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+p {
+    margin: 10px;
+}
+
+.back {
+    height: 600px;
+    width: 1200px;
+    background: #fe868674;
+    border: 2px solid #000;
+    border-radius: 30px 0 0 30px;
+    overflow: auto;
+}
+
+article {
+    display: inline-block;
+    margin: 10px;
+    width: 250px;
+    height: 350px;
+    background: #b04e4ed3;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 5px;
+    box-shadow: inset -20px 15px 10px #843c3c9d;
+}
