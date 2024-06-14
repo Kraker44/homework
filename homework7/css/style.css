@@ -1,0 +1,33 @@
+body {
+    background: #3b3b3b;
+}
+
+p {
+    font-size: 50px;
+    color: white;
+}
+
+.inner {
+    display: flex;
+}
+
+.white-rect {
+    background: white;
+    min-height: 100px;
+    width: 800px;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    left: 50%;
+}
+
+.red-circle {
+    background: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 10000px;
+    position: relative;
+    left: 60px;
+    bottom: 50px;
+}
