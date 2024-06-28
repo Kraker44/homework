@@ -1,0 +1,41 @@
+body {
+    background-color: #444040;
+    color: #ffe6e6;
+    font-family: sans-serif;
+    font-size: 80px;
+    padding-top: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    position: relative;
+}
+
+.title::before,
+.title::after {
+    content: '';
+    position: absolute;
+    top: 50%;    
+    transform: translateY(-50%);
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #ffcbcb;
+    border-radius: 50%;
+
+}
+
+.title::before {
+    left: -150px;
+    background-color: #a852ff;
+}
+
+.title::after {
+    right: -150px;
+    background-color: #ff3e3e;
+}
