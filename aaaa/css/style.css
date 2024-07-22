@@ -12,11 +12,15 @@
 }
 
 
-body {
+.body {
     font-family: "Montserrat", "Arial", sans-serif;
     line-height: 1.5;
     color: var(--general-text);
     background: var(--general-bg);
+}
+
+.body--opened-menu {
+    overflow: hidden;
 }
 
 .wrapper {
@@ -75,13 +79,14 @@ body {
 
 .header__logo {
     max-width: 174px;
+    z-index: 11;
 }
 
 .nav {}
 
 .nav__list {
     display: flex;
-    gap: 40px;
+    gap: 5vh 40px;
 }
 
 .nav__item {}
@@ -111,6 +116,63 @@ body {
 .nav__link:hover::before {
     opacity: 1;
 }
+
+.burger-icon {
+    display: none;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+}
+
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after {
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 100px;
+    background: var(--general-text);
+}
+
+.burger-icon span {
+    position: relative;
+}
+
+.burger-icon span::before,
+.burger-icon span::after {
+    content: '';
+    position: absolute;
+}
+
+.burger-icon span::before {
+    top: -8px;
+}
+
+.burger-icon span::after {
+    bottom: -8px;
+}
+
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after {
+    transition: all .4s;
+}
+
+.body--opened-menu .burger-icon span {
+    background: transparent;
+}
+.body--opened-menu .burger-icon span::before{
+    top: 0;
+    transform: rotate(45deg);
+}
+.body--opened-menu .burger-icon span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* ============================================================================================= */
 
 .hero {
     padding: 50px 0 140px;
@@ -217,4 +279,38 @@ body {
 
 .hero__img-button:hover::before {
     opacity: 1;
+}
+
+/* ============================================================================================ */
+
+@media (max-width: 900px) {
+    .nav {
+        position: fixed;
+        inset: 0;
+        background: var(--general-bg);
+        z-index: 10;
+        padding: 22vh 15px 30px;
+        font-size: 24px;
+
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all .6s;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .body--opened-menu .nav {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .burger-icon {
+        display: flex;
+    }
 }
